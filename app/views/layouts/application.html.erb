@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  부트스트랩-->
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  <!--이 아래부터 부트스트랩-->
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <!--이 위까지 부트스트랩-->
+<style>
+.navbar.transparent.navbar-inverse .navbar-inner {
+   background: rgba(0,0,0,0.4);
+}
+</style>  
+
+  </head>
+  
+<body>
+<div class="itsimportant">
+      <nav class="navbar navbar-expand-lg navbar-light bg-faded" >
+        <a class="navbar-brand" href="https://netflix-juan1104.c9users.io"><img alt="" src="/assets/brand.png"></a>
+      
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"  >
+          <ul class="navbar-nav mr-auto navbar-left">
+            <li class="nav-item active">
+              <a class="nav-link" href="https://netflix-juan1104.c9users.io">HOME<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://netflix-juan1104.c9users.io/posts/index">NETFLIX</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://netflix-juan1104.c9users.io/posts/index3">BLACKLIST</a>
+            </li>
+            
+              <li class="nav-item">
+                <a class="nav-link" href="https://netflix-juan1104.c9users.io/posts/index2"> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</a>
+              </li>
+           
+          </ul>
+          
+        
+          <ul class="navbar-nav justify-content-end navbar-right">
+              <% if user_signed_in? %>
+                  <span class="navbar-text">
+                      <strong><%= current_user.email%></strong>님 환영합니다!
+                  </span>
+                
+                  <li class="nav-item">
+                      <!--<a class="nav-link" href="https://netflix-juan1104.c9users.io/users/sign_out">로그아웃</a>-->
+                      <%= link_to '로그아웃', destroy_user_session_path, :method => :delete %>
+              
+                  </li>
+              <% else %>
+                  <li class="nav-item">
+                      <a class="nav-link" href="https://netflix-juan1104.c9users.io/users/sign_in">로그인</a>
+        
+                      <!--</%= link_to '로그인', new_user_session_path %>-->
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="https://netflix-juan1104.c9users.io/users/sign_up">회원가입</a>
+                    
+                      <!--</%= link_to '회원가입', new_user_registration_path %>-->
+                  </li>
+              <% end %>
+          </ul>
+      
+        </div>
+      </nav>
+</div>    
+      
+      
+        
+
+
+<%= yield %>
+
+</body>
+</html>
+

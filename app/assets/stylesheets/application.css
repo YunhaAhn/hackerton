@@ -1,0 +1,24 @@
+@import url(//fonts.googleapis.com/earlyaccess/kopubbatang.css);
+
+
+p {
+  line-height: 1.75; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: 'KoPub Batang', serif;
+  text-transform: uppercase; }
+  
+  
+.navbar-nav{padding-left: 100px !important;}
+
+.navbar-brand, .navbar-nav>li>a {padding : 10px 20px !important;}
+
+a{color: black !important;}
+
+.navbar{ margin-bottom: 0 !important;}
